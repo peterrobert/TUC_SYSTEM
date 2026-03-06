@@ -54,16 +54,7 @@ const NavBar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          {/* <div className="hidden md:flex relative group">
-            <input
-              type="text"
-              placeholder="Search lists..."
-              className="pl-9 pr-4 py-2 bg-gray-100 border border-transparent focus:bg-white focus:border-purple-300 focus:ring-2 focus:ring-purple-100 rounded-lg text-sm w-48 transition-all outline-none text-gray-700 placeholder-gray-400"
-            />
-            <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-          </div> */}
-
-          <button className="bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-md shadow-purple-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <button className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-md shadow-purple-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
             Log in
           </button>
 

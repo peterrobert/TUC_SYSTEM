@@ -12,7 +12,7 @@ export const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "TUC SYSTEM",
+  title: "TUC TOP10 SYSTEM",
   description: "A system for managing and tracking tasks, projects, and teams.",
 };
 

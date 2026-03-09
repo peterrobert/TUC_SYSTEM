@@ -4,6 +4,8 @@ import { Lato } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/reusable-components/Footer";
 import NavBar from "./components/reusable-components/NavBar";
+import { CreateTop10ModalProvider } from "./context/CreateTop10ModalContext";
+import CreateTop10Modal from "./components/modal/CreateTop10Modal";
 
 export const lato = Lato({
   subsets: ["latin"],
@@ -35,9 +37,12 @@ export default function RootLayout({
       <body
         className={`${lato.className} antialiased bg-gray-50 text-gray-900`}
       >
-        <NavBar />
-        {children}
-        <Footer />
+        <CreateTop10ModalProvider>
+          <NavBar />
+          {children}
+          <Footer />
+          <CreateTop10Modal />
+        </CreateTop10ModalProvider>
       </body>
     </html>
   );

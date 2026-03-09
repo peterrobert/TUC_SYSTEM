@@ -1,7 +1,25 @@
 "use client";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
 import Image from "next/image";
 
+type navLinksType = {
+  label: string;
+  href: string;
+};
+
 const NavBar = () => {
+  const pathname = usePathname();
+  const isListsPage = pathname === "/lists";
+
+  const navLinks: navLinksType[] = [
+    { label: "Intro", href: "/#intro" },
+    { label: "How it Works", href: "/#how-it-works" },
+    { label: "Features", href: "/#features" },
+    { label: "Featured Lists", href: "/#lists" },
+  ];
+
   return (
     <nav
       id="navbar"
@@ -9,48 +27,45 @@ const NavBar = () => {
     >
       <div className="max-w-300 mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <a href="#" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:bg-purple-700 transition-colors">
               <i className="fa-solid fa-layer-group text-sm"></i>
             </div>
             <span className="font-bold text-lg tracking-tight text-gray-900">
               Top10 System
             </span>
-          </a>
-          <a
-            href="#explore"
-            className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-purple-600 transition-colors"
+          </Link>
+          <Link
+            href="/lists"
+            className={`hidden md:flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-purple-600 transition-colors
+              ${isListsPage ? "text-purple-600" : ""}
+              `}
           >
             <i className="fa-regular fa-compass"></i>
-            Explore
-          </a>
+            Collections
+          </Link>
         </div>
 
         <div className="hidden lg:flex items-center gap-8">
-          <a
-            href="#intro"
-            className="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors"
-          >
-            Intro
-          </a>
-          <a
-            href="#how-it-works"
-            className="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors"
-          >
-            How it Works
-          </a>
-          <a
-            href="#features"
-            className="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors"
-          >
-            Features
-          </a>
-          <a
-            href="#lists"
-            className="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors"
-          >
-            Featured Lists
-          </a>
+          {navLinks.map((link: navLinksType, id: number) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                href={link.href}
+                key={id}
+                className={`text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-purple-600"
+                    : "text-gray-600 hover:text-purple-600"
+                } flex flex-col items-center`}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="mt-1 w-1.5 h-1.5 bg-purple-600 rounded-full"></span>
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-4">
@@ -70,31 +85,31 @@ const NavBar = () => {
 
             <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right z-50">
               <div className="p-2">
-                <a
+                <Link
                   href="#"
                   className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Profile
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   My Lists
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Settings
-                </a>
+                </Link>
                 <div className="h-px bg-gray-100 my-1"></div>
-                <a
+                <Link
                   href="#"
                   className="block px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                 >
                   Log out
-                </a>
+                </Link>
               </div>
             </div>
           </div>

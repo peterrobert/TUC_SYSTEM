@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
 import Footer from "./components/reusable-components/Footer";
@@ -7,12 +7,11 @@ import NavBar from "./components/reusable-components/NavBar";
 import { CreateTop10ModalProvider } from "./context/CreateTop10ModalContext";
 import CreateTop10Modal from "./components/modal/CreateTop10Modal";
 
-export const lato = Lato({
+export const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  variable: "--font-inter", // optional: use with Tailwind
   display: "swap",
 });
-
 export const metadata: Metadata = {
   title: "TUC TOP10 SYSTEM",
   description: "A system for managing and tracking tasks, projects, and teams.",
@@ -35,7 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${lato.className} antialiased bg-gray-50 text-gray-900`}
+        className={`${inter.className} antialiased bg-gray-50 text-gray-900`}
       >
         <CreateTop10ModalProvider>
           <NavBar />

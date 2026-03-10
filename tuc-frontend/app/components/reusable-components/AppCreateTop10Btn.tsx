@@ -6,7 +6,7 @@ const AppCreateTop10Btn = () => {
   return (
     <button
       onClick={open}
-      className="bg-purple-600 hover:bg-purple-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-md shadow-purple-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm flex items-center gap-2"
+      className="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white font-medium px-5 py-2.5 rounded-lg shadow-md shadow-purple-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-sm flex items-center gap-2"
     >
       <i className="fa-solid fa-plus"></i>
       Create Top10

@@ -6,7 +6,7 @@ const EngagementStatsSection = () => {
       </h4>
 
       <div className="grid grid-cols-2 gap-3 mb-4">
-        <div className="bg-gray-200 p-3 rounded-lg border border-divider text-center group hover:border-purple-200 transition-colors">
+        <div className="bg-gray-100 p-3 rounded-lg border border-divider text-center group hover:border-purple-200 transition-colors cursor-pointer">
           <div className="text-2xl font-bold text-text-purple group-hover:text-purple-600 transition-colors">
             482
           </div>
@@ -14,7 +14,7 @@ const EngagementStatsSection = () => {
             Total Votes
           </div>
         </div>
-        <div className="bg-surface-muted p-3 rounded-lg border border-divider text-center group hover:border-purple-200 transition-colors">
+        <div className="bg-surface-muted p-3 rounded-lg border border-divider text-center group hover:border-purple-200 transition-colors cursor-pointer">
           <div className="text-2xl font-bold text-text-purple group-hover:text-purple-600 transition-colors">
             86
           </div>

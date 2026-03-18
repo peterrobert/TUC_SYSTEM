@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-pale-blue: #F8F9FB;
+  --color-light-gray: #E6E8EC;
+  --color-dark-gray: #1E1E1E;
+  --color-medium-gray: #5F6368;
+  --color-deep-blue: #1F3C88;
+  --color-dark-cyan: #2F7D63;
+  --color-cool-gray: #D1D5DB;
+  --color-bright-blue: #274DB2;
+
+  --font-serif: "ABeeZee", sans-serif;
+  --font-sans: "Lato", sans-serif;
+}
+
+/* Default: mobile first */
+.arrow-horizontal {
+  display: none;
+  /* hide desktop arrows on small screens */
+}
+
+.arrow-vertical {
+  display: inline-block;
+  /* show vertical arrows on small screens */
+  margin: 0.5rem 0;
+}
+
+/* Desktop (md+) */
+@media (min-width: 768px) {
+  .arrow-horizontal {
+    display: inline-block;
+    /* show horizontal arrows */
+    margin: 0 1rem;
+  }
+
+  .arrow-vertical {
+    display: none;
+    /* hide vertical arrows */
+  }
+}

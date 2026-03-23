@@ -5,6 +5,7 @@ import SubmitEntryForm from "@/app/components/reusable-components/SubmitEntryFor
 import CTA from "./CTA";
 import ModeExplanationSection from "./ModeExplanationSection";
 import EngagementStatsSection from "./EngagementStatsSection";
+import TopContributorsSection from "./TopContributorsSection";
 
 const page = () => {
   return (
@@ -29,6 +30,7 @@ const page = () => {
               <SubmitEntryForm />
               <ModeExplanationSection />
               <EngagementStatsSection />
+              <TopContributorsSection />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 const EngagementStatsSection = () => {
   return (
-    <div className="bg-gray-100 rounded-md border border-border shadow-card p-5">
+    <div className="bg-white rounded-md border border-border shadow-card p-5">
       <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider mb-4">
         Live Engagement
       </h4>
